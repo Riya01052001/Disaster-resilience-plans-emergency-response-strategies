@@ -1,0 +1,30 @@
+name: Generate Documentation
+
+on:
+  push:
+  branches: 
+  - main
+  
+  jobs:
+    build:
+    runs-on: ubuntu-latest
+
+  steps:
+  - name: checkout Repository
+  uses: actions/checkout@v2
+
+  - name: Install MkDocs
+  run: |
+    pip install mkdocs
+    pip install mkdocs-material # (optional) Install a theme
+
+    - name: Generate Documentation
+    run: |
+    mkdocs build
+
+    - Replace 'main' with your main branch name if it's different.
+
+    -Adjust 'pip install' commands based on your MkDocs configuration or any additional dependecies needed.
+
+    -Update 'mkdocs build' if your MkDocs commands differ.
+  
